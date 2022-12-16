@@ -1,8 +1,8 @@
 package booklist;
 
-import java.util.Comparator;
-import java.util.Objects;
-
+/**
+ * This class uses to create a contact object
+ */
 public class Contacts {
     private String name;
     private String phoneNumber;

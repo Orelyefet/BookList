@@ -5,6 +5,12 @@ import java.util.Scanner;
 
 public class MainMobilePhone {
 
+    /**
+     * Main method contains a switch case that uses to invoke the functions from a BookList class.
+     * Using a scanner input to choose the option/function.
+     * @param ar1gs
+     * @throws IOException
+     */
     public static void main(String[] ar1gs) throws IOException {
 
         Scanner scan = new Scanner(System.in);
@@ -59,6 +65,10 @@ public class MainMobilePhone {
 
         }
     }
+
+    /**
+     * This method uses for printing the options list.
+     */
     private static void menu (){
         System.out.println("\n1. Add new contact\n"
                         + "2. Remove duplicate contact\n"

@@ -8,14 +8,21 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import java.io.*;
 import java.util.*;
 
+/**
+ * This class uses to implement all the functions required in the exercise
+ */
+
 public class BookList {
     private static String name;
     private static String phoneNumber;
     private static ArrayList<Contacts> myContacts = new ArrayList<Contacts>();
     private static Scanner scan = new Scanner(System.in);
 
-
-    // Add new contact
+    /**
+     * Add new contact
+     * This method implements adding a new contact
+     * @return an indication if added a new contact has been succeeded or not
+     */
     public boolean addContact() {
         System.out.print("Enter name: ");
         name = scan.nextLine();
@@ -36,7 +43,10 @@ public class BookList {
         return true;
     }
 
-    // Remove from the list the first duplicate that is detected by name
+    /**
+     * Remove from the list the first duplicate that is detected by name
+     * @return an indication if there were a contact that was removed from the list in case of duplicated records.
+     */
     public boolean removeDupByName() {
         System.out.print("Enter name: ");
         name = scan.nextLine();
@@ -55,7 +65,9 @@ public class BookList {
         return false;
     }
 
-    // Printing all the existing contacts in the list
+    /**
+     * Printing all the existing contacts in the list
+     */
     public void printBookList() {
         if (myContacts.size() > 0) {
             for (Contacts c : myContacts) {
@@ -66,7 +78,10 @@ public class BookList {
         }
     }
 
-    // Searching by name
+    /**
+     * Searching by name
+     * This method uses a scanner input to search a record from the list.
+     */
     public void searchByName() {
         System.out.print("Search by name: ");
         String exception = "";
@@ -92,7 +107,10 @@ public class BookList {
         }
     }
 
-    // Ascending sorting list by phone number
+    /**
+     * Ascending sorting list by phone number
+     * This method uses a comparator interface for comparing objects of the contacts class.
+     */
     public void sortedListAcs() {
         if (myContacts.size() > 0) {
             Collections.sort(myContacts, new Comparator<Contacts>() {
@@ -107,7 +125,10 @@ public class BookList {
         }
     }
 
-    // Descending sorting list by contact name
+    /**
+     * Descending sorting list by contact name
+     * This method uses a comparator interface for comparing objects of the contacts class.
+     */
     public void sortedListDecs() {
         if (myContacts.size() > 0) {
             Collections.sort(myContacts, new Comparator<Contacts>() {
@@ -122,7 +143,11 @@ public class BookList {
         }
     }
 
-    // Reverse contact list
+    /**
+     * Reverse contact list
+     * Printing the list of contacts in the original order.
+     * Printing the list of contacts after the 'for' loop that uses to reverse order.
+     */
     public void reverseList() {
         System.out.println("Before revers: ");
         printBookList();
@@ -133,7 +158,10 @@ public class BookList {
         }
     }
 
-    // Remove the records, where the name and the phone number are duplicated in the list.
+    /**
+     * Remove the records, where the name and the phone number are duplicated in the list.
+     * @return an indication that the duplicate records that contain the same name and phone number both are removed from the list.
+     */
     public boolean removeDupByNameAndPhone() {
         boolean isDupNameAndPhone = false;
         for (int i = 0; i < myContacts.size(); i++) {
@@ -154,7 +182,10 @@ public class BookList {
         return true;
     }
 
-    // Save a file as a csv file (for backup).
+    /**
+     * Save a file as a csv file (for backup).
+     * @throws FileNotFoundException
+     */
     public void exportBackUp() throws FileNotFoundException {
         File backUp = new File("Backup.csv");
         PrintWriter out = new PrintWriter(backUp);
@@ -166,7 +197,9 @@ public class BookList {
         System.out.println("Backup has been success");
     }
 
-    // Load data from excel
+    /**
+     * Load data from an excel table
+     */
     public void loadFromExcelData() {
         StringBuffer p;
         String path = "/Users/orelyefet/Desktop/IntellijProjects/BookList/ContactList.xlsx";
