@@ -70,7 +70,7 @@ public class MobilePhone {
     /**
      * This method uses for printing the options list.
      */
-    public static void menu () {
+    private static void menu () {
         System.out.println("\n1. Add new contact\n"
                 + "2. Remove duplicate contact\n"
                 + "3. Print all existing contacts from the list\n"
@@ -87,7 +87,7 @@ public class MobilePhone {
     /**
      * This method return int values, and handle invalid entered chars.
      */
-    public static int input () {
+    private static int input () {
         Scanner scan = new Scanner(System.in);
 
         boolean validIntegerEntered = false;
