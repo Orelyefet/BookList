@@ -87,10 +87,8 @@ public class BookList {
             this.name = scan.nextLine();
             for (Contacts c : myContacts) {
                 if (name.equalsIgnoreCase(c.getName())) {
-                    isExist = true;
                     System.out.println(c.toString());
-                    return;
-
+                    isExist = true;
                 } else {
                     isExist = false;
                 }
@@ -167,14 +165,14 @@ public class BookList {
                         && (myContacts.get(i).getPhoneNumber().equals(myContacts.get(j).getPhoneNumber()))) {
                     myContacts.remove(j);
                     j = j - 1;
-                } else {
-                    isDupNameAndPhone = false;
+                    System.out.println(myContacts.get(i).toString());
+                } else if(isDupNameAndPhone = false){
                     System.out.println("There is no duplicated record to delete");
                     break;
                 }
             }
         }
-        System.out.println("Your duplicated records have has been removed");
+        System.out.println("\nYour duplicated records have has been removed");
         return true;
     }
 

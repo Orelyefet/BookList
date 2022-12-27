@@ -61,7 +61,7 @@ public class MobilePhone {
                     System.out.println("End");
                     break;
                 default:
-                    System.out.println("Sorry, your chosen option is invalid.");
+                    System.out.println("\nSorry, your chosen option is invalid.");
                     break;
             }
         }
@@ -98,7 +98,7 @@ public class MobilePhone {
                 validIntegerEntered = true;
             } catch (InputMismatchException e) {
                 scan.nextLine();
-                System.out.println("\nEnter a valid value :");
+                System.out.print("Enter a valid value: ");
             }
         }
         return options;
